@@ -93,25 +93,8 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-cd Projects/starfleet
-
-#alias go="git checkout"
-alias cap="/home/mbissenden/Projects/dev-tools/gen-patch.py -u && git commit -a -m 'Uploaded patch file for review.'"
-alias gen-patch="cap"
-alias ca="git commit -a"
-alias ducks="doxygen"
-alias vi=vim
-alias rc="rm /home/mbissenden/Projects/starfleet/m4/*"
-alias ut=""
-alias stuff="echo $(git_prompt_info)"
-alias m="make install -j"
-alias ra="/home/mbissenden/rebuild-all"
-
 function go()
 {
-    branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* r\(.*\)/\1/')
-    /home/mbissenden/Projects/rev-tools/rev-tools.sh -r ${branch} > /dev/null 2>&1
-
     if [ "$@" = "lunch" ]
     then
         hamster-cli stop
