@@ -87,3 +87,6 @@ set undoreload=10000        " number of lines to save for undo
 "Enable omnicopmpletion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+
+" Enable sudo write on w!!
+cnoremap w!! w !sudo tee % >/dev/null
