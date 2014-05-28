@@ -1,0 +1,5 @@
+m4_define(`_valign', `Vertical alignment issue.')
+m4_define(`_eqalign', `The alignment of the equals symbol on this line is incorrect.')
+m4_define(`_eqaligns', `The equals symbols on these lines are misaligned.')
+m4_define(`_align', `The "$1" symbol on this line is misaligned.')
+m4_define(`_lg', `Looks good.')

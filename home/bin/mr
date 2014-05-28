@@ -1,0 +1,9 @@
+#!/bin/bash
+
+mostRecentRev=$HOME/rev/$(ls -t1 $HOME/rev | head -1)
+
+(
+echo "m4_include(\`code.m4')";
+echo "m4_include(\`doc.m4')"; 
+cat ${mostRecentRev}
+) | m4 -I$HOME/rev/m4 -P | /usr/local/bin/Markdown.pl | xclip
